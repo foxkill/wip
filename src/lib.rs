@@ -1,6 +1,9 @@
 //! My cool lib
 //
 //
+
+pub mod memoize;
+pub mod combinators;
 pub trait Draw {
     fn draw(&self);
 }
@@ -16,28 +19,35 @@ impl Screen {
         }
     }
 }
-
 #[derive(Default)]
-pub struct Button {
+struct Dimensions {
     pub width: i32,
     pub height: i32,
 }
 
 #[derive(Default)]
+pub struct Button {
+    dim: Dimensions,
+}
+
+#[derive(Default)]
 pub struct ComboBox {
-    pub width: i32,
-    pub height: i32,
+    dim: Dimensions,
     pub options: Vec<String>,
 }
 
 impl Draw for Button {
     fn draw(&self) {
-        println!("Im a button {} {}", self.width, self.height)
+        println!("Im a button {} {}", self.dim.width, self.dim.height)
     }
 }
 
 impl Draw for ComboBox {
     fn draw(&self) {
-        println!("Im a combo box: {} {}. Content: {:?}", self.width, self.height, self.options)
+        println!("Im a combo box: {} {}. Content: {:?}", 
+            self.dim.width, 
+            self.dim.height, 
+            self.options
+        )
     }
 }
