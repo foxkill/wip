@@ -1,8 +1,8 @@
 //
 // main.rs
 //
-use quote::parser::Quote;
-use quote::style::Style;
+use quote::parser::parse;
+use quote::parser::Style;
 
 // #[warn(clippy::comparison_chain)]
 #[derive(Debug)]
@@ -75,8 +75,8 @@ fn main() {
     // scr.run();
 
     let q = String::from("102'18'5");
-    match Quote::parse(&q, Style::ShortNoteFuture) {
-       Ok(quote) => println!("{} => {}", q, quote.price()),
+    match parse(&q, Style::ShortNoteFuture) {
+       Ok(quote) => println!("{} => {}", q, quote),
        Err(e) => println!("Could not parse quote {}, err: {:?}", q, e),
     };
 }
