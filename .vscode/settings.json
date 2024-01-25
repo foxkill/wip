@@ -1,5 +1,26 @@
 {
     "rust-analyzer.linkedProjects": [
         "./Cargo.toml"
-    ]
+    ],
+    "peacock.affectActivityBar": false,
+    "peacock.affectEditorGroupBorder": false,
+    "peacock.affectPanelBorder": false,
+    "peacock.affectSideBarBorder": false,
+    "peacock.affectStatusAndTitleBorders": false,
+    "peacock.affectTabActiveBorder": true,
+    "peacock.keepBadgeColor": false,
+    "workbench.colorCustomizations": {
+        "sash.hoverBorder": "#a789df",
+        "tab.activeBorder": "#a789df",
+        "commandCenter.border": "#e7e7e799",
+        "titleBar.activeBackground": "#8961d4",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#8961d499",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#8961D4",
+    "peacock.affectStatusBar": false,
+    "peacock.affectTitleBar": true,
+    "peacock.surpriseMeFromFavoritesOnly": true,
+    "peacock.surpriseMeOnStartup": true
 }
