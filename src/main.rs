@@ -10,7 +10,10 @@ use wip::inheritance::ComboBox;
 use wip::inheritance::Dimensions;
 use wip::inheritance::Screen;
 use wip::threads::use_concurrency;
+use wip::threads::use_concurrency_by_using_channels;
+use wip::threads::use_concurrency_by_using_channels_with_multiple_msgs;
 use wip::threads::use_concurrency_with_move;
+use wip::threads::use_concurrency_with_multiple_senders_and_receivers;
 use wip::{combinators::{extract_students, get_students}, interior_mod::Memoize, traits::{Vehicle, Car, Truck}};
 
 fn interior_modification_print(m: Memoize) {
@@ -60,5 +63,8 @@ fn use_external_quote() {
 
 fn main() {
     // use_external_quote();
-    use_concurrency_with_move();
+    // use_concurrency_with_move();
+    // use_concurrency_by_using_channels();
+    // use_concurrency_by_using_channels_with_multiple_msgs();
+    use_concurrency_with_multiple_senders_and_receivers();
 }
