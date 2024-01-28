@@ -10,15 +10,15 @@
     "peacock.affectTabActiveBorder": true,
     "peacock.keepBadgeColor": false,
     "workbench.colorCustomizations": {
-        "sash.hoverBorder": "#a789df",
-        "tab.activeBorder": "#a789df",
-        "commandCenter.border": "#e7e7e799",
-        "titleBar.activeBackground": "#8961d4",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#8961d499",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#fbed80",
+        "titleBar.activeBackground": "#f9e64f",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#f9e64f99",
+        "titleBar.inactiveForeground": "#15202b99",
+        "tab.activeBorder": "#fbed80"
     },
-    "peacock.remoteColor": "#8961D4",
+    "peacock.remoteColor": "#f9e64f",
     "peacock.affectStatusBar": false,
     "peacock.affectTitleBar": true,
     "peacock.surpriseMeFromFavoritesOnly": true,

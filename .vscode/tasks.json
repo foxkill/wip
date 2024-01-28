@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cargo",
+			"command": "build",
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build",
+			"label": "rust: cargo build"
+		},
+		{
+			"label": "set_runtime_env",
+			"type": "shell",
+			"command": "export RUNTIME_PATH=$(rustc --print sysroot)"
+		},
+	]
+}
