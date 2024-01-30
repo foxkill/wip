@@ -9,5 +9,5 @@ pub fn use_print_env() {
         .collect::<Vec<_>>()
         .join("\n");
 
-    println!("{}", v);
+    println!("{:?}", v);
 }

@@ -3,6 +3,10 @@
 //
 #![allow(unused)]
 
+mod oncelock;
+use std::thread;
+
+use oncelock::use_oncelock;
 use quoteparser::prelude::*;
 use wip::envp::use_print_env;
 use wip::inheritance::Button;
@@ -20,6 +24,7 @@ use wip::{
     interior_mod::Memoize,
     traits::{Car, Truck, Vehicle},
 };
+
 
 fn interior_modification_print(m: Memoize) {
     println!("{}", m.get())
@@ -59,11 +64,19 @@ fn use_external_quote() {
         Ok(quote) => println!("{} => {}", q, quote),
         Err(e) => println!("Could not parse quote {}, err: {:?}", q, e),
     };
+
+    let result: f64 = "104-04+".parse::<Quote>().map_or(0.0, |m| m.into());
+    println!("s.parse::<Quote>().into(): {}", result);
 }
 
+
 fn main() {
+    // let handle = thread::spawn(|| { use_oncelock("2017-09-09")});
+    oncelock::use_oncelock("2016-09-09");
+
+    // handle.join();
     // use_print_env();
-    use_external_quote();
+    // use_external_quote();
     // use_concurrency_with_move();
     // use_concurrency_by_using_channels();
     // use_concurrency_by_using_channels_with_multiple_msgs();
