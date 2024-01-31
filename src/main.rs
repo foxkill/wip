@@ -4,6 +4,7 @@
 #![allow(unused)]
 
 mod oncelock;
+mod from_into;
 use std::thread;
 
 use oncelock::use_oncelock;
@@ -71,8 +72,14 @@ fn use_external_quote() {
 
 
 fn main() {
-    let name = "Stefan";
-    print!("my name ist {}", name);
+    let n = from_into::Number::from(3);
+    println!("{:?}", n);
+    let k: from_into::Number = 7.into();
+    dbg!(k);
+    // let mut vec = Vec::<u8>::with_capacity(1);
+    // let ptr = vec.as_mut_ptr();
+    // unsafe { ptr.write(3) };
+    // dbg!(vec);
     // let handle = thread::spawn(|| { use_oncelock("2017-09-09")});
     // oncelock::use_oncelock("2016-09-09");
 
