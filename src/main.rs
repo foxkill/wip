@@ -71,8 +71,10 @@ fn use_external_quote() {
 
 
 fn main() {
+    let name = "Stefan";
+    print!("my name ist {}", name);
     // let handle = thread::spawn(|| { use_oncelock("2017-09-09")});
-    oncelock::use_oncelock("2016-09-09");
+    // oncelock::use_oncelock("2016-09-09");
 
     // handle.join();
     // use_print_env();
