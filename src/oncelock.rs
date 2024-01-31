@@ -1,4 +1,4 @@
-///! The once lock experiment
+//! The once lock experiment
 //
 //
 use std::sync::Mutex;

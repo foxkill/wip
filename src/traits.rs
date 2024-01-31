@@ -26,6 +26,6 @@ pub fn drive_vehicle(v: impl Vehicle) {
 
 
 pub fn use_traits() {
-    let v: &dyn Vehicle = &Car;
+    let _v: &dyn Vehicle = &Car;
     // drive_vehicle(&v);
 }
