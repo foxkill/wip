@@ -3,10 +3,12 @@
 //
 #![allow(unused)]
 
+mod builder;
 mod oncelock;
 mod from_into;
 use std::thread;
 
+use builder::use_builder;
 use oncelock::use_oncelock;
 use quoteparser::prelude::*;
 use wip::envp::use_print_env;
@@ -20,6 +22,7 @@ use wip::threads::use_concurrency_by_using_channels_with_multiple_msgs;
 use wip::threads::use_concurrency_with_move;
 use wip::threads::use_concurrency_with_multiple_senders_and_receivers;
 use wip::traits::drive_vehicle;
+use wip::traits::use_traits;
 use wip::{
     combinators::{extract_students, get_students},
     interior_mod::Memoize,
@@ -70,12 +73,9 @@ fn use_external_quote() {
     println!("s.parse::<Quote>().into(): {}", result);
 }
 
-
 fn main() {
-    let n = from_into::Number::from(3);
-    println!("{:?}", n);
-    let k: from_into::Number = 7.into();
-    dbg!(k);
+    use_builder();
+    // use_traits();
     // let mut vec = Vec::<u8>::with_capacity(1);
     // let ptr = vec.as_mut_ptr();
     // unsafe { ptr.write(3) };

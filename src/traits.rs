@@ -20,12 +20,21 @@ impl Vehicle for Car {
 }
 
 #[allow(dead_code)]
-pub fn drive_vehicle(v: impl Vehicle) {
+pub fn drive_vehicle(v: &impl Vehicle) {
     v.drive()    
 }
-
+#[allow(dead_code)]
+pub fn drive_vehicle_dynamic(v: &dyn Vehicle) {
+    v.drive();
+}
 
 pub fn use_traits() {
-    let _v: &dyn Vehicle = &Car;
-    // drive_vehicle(&v);
+    let car = Car {};
+    let truck = Truck {};
+
+    drive_vehicle(&car);
+    drive_vehicle(&truck);
+
+    let dcar: &dyn Vehicle = &car;
+    drive_vehicle_dynamic(dcar);
 }
