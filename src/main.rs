@@ -6,9 +6,13 @@
 mod builder;
 mod oncelock;
 mod from_into;
+mod async_exp;
+
 use std::thread;
 
+use async_exp::use_async;
 use builder::use_builder;
+use futures::executor::block_on;
 use oncelock::use_oncelock;
 use quoteparser::prelude::*;
 use wip::envp::use_print_env;
@@ -74,7 +78,8 @@ fn use_external_quote() {
 }
 
 fn main() {
-    use_builder();
+    block_on(use_async());
+    // use_builder();
     // use_traits();
     // let mut vec = Vec::<u8>::with_capacity(1);
     // let ptr = vec.as_mut_ptr();
