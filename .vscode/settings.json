@@ -11,14 +11,14 @@
     "peacock.keepBadgeColor": false,
     "workbench.colorCustomizations": {
         "commandCenter.border": "#15202b99",
-        "sash.hoverBorder": "#93e6fc",
-        "titleBar.activeBackground": "#61dafb",
+        "sash.hoverBorder": "#65c89b",
+        "titleBar.activeBackground": "#42b883",
         "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#61dafb99",
+        "titleBar.inactiveBackground": "#42b88399",
         "titleBar.inactiveForeground": "#15202b99",
-        "tab.activeBorder": "#93e6fc"
+        "tab.activeBorder": "#65c89b"
     },
-    "peacock.remoteColor": "#61dafb",
+    "peacock.remoteColor": "#42b883",
     "peacock.affectStatusBar": false,
     "peacock.affectTitleBar": true,
     "peacock.surpriseMeFromFavoritesOnly": true,
