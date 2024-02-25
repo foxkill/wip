@@ -1,5 +1,5 @@
 //
-use std::sync::mpsc;
+use std::sync::{mpsc, Arc, Mutex};
 use std::{thread, time::Duration}; // Muliple producers, single consumer...
 
 // Do not communicate by sharing memory, instead share memory by communicating!!!
@@ -116,4 +116,23 @@ pub fn use_concurrency() {
 
     // Different behaviour
     // handle.join().unwrap();
+}
+
+/// Use concurrency with mutex
+pub fn use_concurrency_with_mutex() {
+    let counter = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
+    for _ in 0..10 {
+        let handle = {
+            let counter = Arc::clone(&counter);
+            thread::spawn(move || {
+                let mut num = counter.lock().unwrap();
+                *num += 1;
+            })
+        };
+        handles.push(handle);
+    }
+    for handle in handles {
+        handle.join().unwrap();
+    }   
 }
