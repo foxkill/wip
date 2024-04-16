@@ -1,7 +1,8 @@
 //
 // main.rs
 //
-#![allow(unused)]
+pub type Result<T> = core::result::Result<T, Error>;
+pub type Error = Box<dyn std::error::Error>; // for early development
 
 mod builder;
 mod oncelock;
@@ -77,7 +78,7 @@ fn use_external_quote() {
     println!("s.parse::<Quote>().into(): {}", result);
 }
 
-fn main() {
+fn main() -> Result<()> {
     block_on(use_async());
     // use_builder();
     // use_traits();
@@ -95,4 +96,5 @@ fn main() {
     // use_concurrency_by_using_channels();
     // use_concurrency_by_using_channels_with_multiple_msgs();
     // use_concurrency_with_multiple_senders_and_receivers();
+    Ok(())
 }
